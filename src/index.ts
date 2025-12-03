@@ -38,27 +38,27 @@ import { RobotSystem } from "./robot.js";
 
 const assets: AssetManifest = {
   chimeSound: {
-    url: "/audio/chime.mp3",
+    url: "./audio/chime.mp3",
     type: AssetType.Audio,
     priority: "background",
   },
   webxr: {
-    url: "/textures/webxr.png",
+    url: "./textures/webxr.png",
     type: AssetType.Texture,
     priority: "critical",
   },
   environmentDesk: {
-    url: "/gltf/environmentDesk/environmentDesk.gltf",
+    url: "./gltf/environmentDesk/environmentDesk.gltf",
     type: AssetType.GLTF,
     priority: "critical",
   },
   plantSansevieria: {
-    url: "/gltf/plantSansevieria/plantSansevieria.gltf",
+    url: "./gltf/plantSansevieria/plantSansevieria.gltf",
     type: AssetType.GLTF,
     priority: "critical",
   },
   robot: {
-    url: "/gltf/robot/robot.gltf",
+    url: "./gltf/robot/robot.gltf",
     type: AssetType.GLTF,
     priority: "critical",
   },
@@ -111,7 +111,7 @@ world.scene.add(ambientLight);
 // Afegeix la llum ambiental a l'escena per evitar zones massa fosques
 
   // 3) Exemple de CÀRREGA A TEMPS D’EXECUCIÓ
-AssetManager.loadGLTF('/gltf/dynamic-object.glb', 'dynamicModel')
+AssetManager.loadGLTF('./gltf/dynamic-object.glb', 'dynamicModel')
   .then(() => {
     const gltf = AssetManager.getGLTF('dynamicModel');
     if (!gltf) {
@@ -181,7 +181,7 @@ AssetManager.loadGLTF('/gltf/dynamic-object.glb', 'dynamicModel')
 
     .addComponent(Robot)
     .addComponent(AudioSource, {
-      src: "/audio/chime.mp3",
+      src: "./audio/chime.mp3",
       maxInstances: 3,
       playbackMode: PlaybackMode.FadeRestart,
     });
@@ -189,7 +189,7 @@ AssetManager.loadGLTF('/gltf/dynamic-object.glb', 'dynamicModel')
   const panelEntity = world
     .createTransformEntity()
     .addComponent(PanelUI, {
-      config: "/ui/welcome.json",
+      config: "./ui/welcome.json",
       maxHeight: 0.8,
       maxWidth: 1.6,
     })
