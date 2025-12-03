@@ -24,6 +24,7 @@ optimizeGLTF({
     outDir: "dist",
     sourcemap: process.env.NODE_ENV !== "production",
     target: "esnext",
+    chunkSizeWarningLimit: 2000,
     rollupOptions: { input: "./index.html",
       output: {
         // Separem dependències grans en un chunk "vendor"
